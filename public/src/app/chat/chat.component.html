@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="glyphicon glyphicon-heart"></span> {{ title }}
+      </div>
+      <div class="panel-body">
+        <label for="">Type here your message...</label>
+        <input type="text" class="form-control" id="message" [(ngModel)]="message" (keyup.enter)="send()">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="glyphicon glyphicon-user"></span> Chat responses
+      </div>
+      <div class="panel-body" id="answers">
+        <p class="col-xs-7" 
+          *ngFor="let answer of answers" 
+          [class.pull-right]="answer.bot"
+          [class.alert-danger]="answer.bot"
+          [class.alert-success]="!answer.bot"
+        >
+          <strong>{{ answer.datetime | date: 'shortDate' }}</strong> -
+          {{ answer.body }}
+      </div>
+    </div>
+  </div>
+</div>

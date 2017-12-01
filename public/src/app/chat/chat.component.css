@@ -1,0 +1,8 @@
+.glyphicon {
+    color: deeppink;
+}
+
+#answers {
+    max-height: 400px; 
+    overflow: auto;
+}
